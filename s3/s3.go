@@ -21,12 +21,13 @@ import (
 	"io"
 	"syscall"
 
-	"github.com/airbusgeo/osio/internal"
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
 	"github.com/aws/smithy-go"
+
+	"github.com/airbusgeo/osio/internal"
 )
 
 type Handler struct {
@@ -99,7 +100,7 @@ func (h *Handler) StreamAt(key string, off int64, n int64) (io.ReadCloser, int64
 		if err != nil {
 			return handleS3ApiError(fmt.Errorf("new reader for s3://%s/%s: %w", bucket, object, err))
 		}
-		size = r.ContentLength
+		size = aws.ToInt64(r.ContentLength)
 	}
 
 	// GET request to fetch range
