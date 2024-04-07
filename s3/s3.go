@@ -27,7 +27,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
 	"github.com/aws/smithy-go"
 
-	"github.com/airbusgeo/osio/internal"
+	"github.com/qq524967747/osio/internal"
 )
 
 type Handler struct {

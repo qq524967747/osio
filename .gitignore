@@ -1,3 +1,4 @@
 /vendor/*
-
 *.sum
+.github
+.idea

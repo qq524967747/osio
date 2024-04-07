@@ -1,10 +1,11 @@
-module github.com/airbusgeo/osio
+module github.com/qq524967747/osio
 
 go 1.21
 
 require (
 	cloud.google.com/go/storage v1.39.0
 	github.com/airbusgeo/errs v0.0.3
+	github.com/airbusgeo/osio v0.1.3
 	github.com/aws/aws-sdk-go-v2 v1.25.3
 	github.com/aws/aws-sdk-go-v2/config v1.27.7
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.51.4
